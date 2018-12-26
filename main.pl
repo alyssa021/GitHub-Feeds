@@ -28,7 +28,7 @@ chomp $url;
 
 $url = $url =~ s/.git$//r;
 
-$get_commits_feed = "curl $url/commits/$branch.atom";
+$get_commits_feed = "curl -s $url/commits/$branch.atom";
 $commits_feed = `$get_commits_feed`;
 
 print "$commits_feed";
