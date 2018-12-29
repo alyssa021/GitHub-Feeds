@@ -31,4 +31,9 @@ $url = $url =~ s/.git$//r;
 $get_commits_feed = "curl -s $url/commits/$branch.atom";
 $commits_feed = `$get_commits_feed`;
 
-print "$commits_feed";
+@tags = $commits_feed =~ /<title>(.*?)<\/title>/gs;
+s{^\s+|\s+$}{}g foreach @tags;
+
+for($i = 0; $i < scalar(@tags); $i++){
+  print "@tags[$i]\n";
+}
