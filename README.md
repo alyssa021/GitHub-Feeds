@@ -1,5 +1,5 @@
 # GitHub-Feeds
-Get your GitHub repository feeds in your Terminal
+Get your GitHub repository feeds in your Terminal. It shows commits in current branch of remote repository.
 
 **Installation**
 ```bash
