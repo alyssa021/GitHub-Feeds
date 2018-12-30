@@ -11,3 +11,4 @@ $ sudo make remove # to uninstall
 ```bash
 $ git feeds # in git repository
 ```
+![Screenshot 1](./screenshots/image1.png)
