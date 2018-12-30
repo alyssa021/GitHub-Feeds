@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+use Term::ANSIColor;
+
 $check_git = "git rev-parse --is-inside-work-tree";
 $isgit = `$check_git`;
 
@@ -32,8 +34,14 @@ $get_commits_feed = "curl -s $url/commits/$branch.atom";
 $commits_feed = `$get_commits_feed`;
 
 @tags = $commits_feed =~ /<title>(.*?)<\/title>/gs;
+
 s{^\s+|\s+$}{}g foreach @tags;
 
 for($i = 0; $i < scalar(@tags); $i++){
+  if($i == 0){
+    print color('bold yellow');
+  } else {
+    print color('cyan');
+  }
   print "@tags[$i]\n";
 }
