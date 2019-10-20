@@ -38,6 +38,7 @@ $commits_feed = `$get_commits_feed`;
 s{^\s+|\s+$}{}g foreach @tags;
 
 for($i = 0; $i < scalar(@tags); $i++){
+
   if($i == 0){
     print color('bold yellow');
   } else {
